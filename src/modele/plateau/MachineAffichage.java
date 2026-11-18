@@ -10,6 +10,9 @@ public class MachineAffichage<T extends Item> extends Machine<T, Item, T, Item> 
 
     @Override
     protected void traiter(T entree1, Item entree2) {
-        // TODO : reprendre le code développé en partie 1
+        if (entree1 == null)
+            return;
+        System.out.println(entree1.toString());
+        sortie1(entree1);
     }
 }

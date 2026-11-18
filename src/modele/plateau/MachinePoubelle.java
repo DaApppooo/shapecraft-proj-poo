@@ -10,6 +10,8 @@ public class MachinePoubelle<T extends Item> extends Machine<T, Item, Item, Item
 
     @Override
     protected void traiter(T entree1, Item entree2) {
-        // TODO : reprendre le code développé en partie 1
+        System.out.println("Destruction de " + entree1.toString());
+        sortie1(entree1);
+        sortie2(entree2);
     }
 }

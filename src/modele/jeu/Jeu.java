@@ -1,16 +1,24 @@
 package modele.jeu;
 
-import modele.plateau.Machine;
-import modele.plateau.Plateau;
+import modele.plateau.*;
+import modele.item.ItemChaine;
 
 public class Jeu extends Thread{
     private Plateau plateau;
 
-
-
-
     public Jeu() {
         plateau = new Plateau();
+
+        MachineGeneratrice gen = new MachineGeneratrice(4);
+        MachineAffichage<ItemChaine> aff = new MachineAffichage<ItemChaine>(4);
+        MachinePoubelle<ItemChaine> poub = new MachinePoubelle<ItemChaine>(4);
+
+        aff.addInput(0, gen, 0);
+        poub.addInput(0, aff, 0);
+
+        plateau.setMachine(1, 1, gen);
+        plateau.setMachine(2, 1, aff);
+        plateau.setMachine(3, 1, poub);
 
         start();
 

@@ -115,10 +115,14 @@ public abstract class Machine<E1 extends Item, E2 extends Item, S1 extends Item,
     {
         return new int[]{idBufferSortieAmont1, idBufferSortieAmont2};
     }
+    private Machine[] amonts()
+    {
+        return new Machine[]{amont1, amont2};
+    }
     public void executer() {
         for (int i = 0; i < nbEntrees; i++)
         {
-            Item inp = retirerSortie(idBufferSorties()[i]);
+            Item inp = amonts()[i].retirerSortie(idBufferSorties()[i]);
             if (bufferEntree1.size() < tailleBuffer && Machine.<E1, Item>canCast(inp))
             {
                 bufferEntree1.add((E1)inp);

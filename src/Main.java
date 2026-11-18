@@ -7,6 +7,8 @@ import javax.swing.*;
 public class Main {
     public static void main(String[] args) {
 
+        System.out.println("HELLO WORLD");
+
         Runnable r = new Runnable() {
             @Override
             public void run() {

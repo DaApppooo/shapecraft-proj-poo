@@ -11,6 +11,7 @@ public class MachineGeneratrice extends Machine<Item, Item, ItemChaine, Item> {
 
     @Override
     protected void traiter(Item entree1, Item entree2) {
-        // TODO : reprendre le code développé en partie 1
+        System.out.println("Génération d'un HELLO WORLD !");
+        sortie1(new ItemChaine("Hello world !"));
     }
 }
